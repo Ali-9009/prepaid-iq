@@ -8,14 +8,25 @@ import {
     Grid3X3,
     Headphones,
     Info,
+    Users,
+    Smartphone,
+    CreditCard,
+    Code2,
+    MonitorSmartphone,
+    Mail,
+    UserPlus,
 } from "lucide-react";
 import Button from "./PrimaryBtn";
 
 const navLinks = [
     { name: "Home", icon: Home },
-    { name: "Services", icon: Grid3X3 },
-    { name: "Support", icon: Headphones },
-    { name: "About", icon: Info },
+    { name: "Who We Service", icon: Users },
+    { name: "Retail Suite", icon: Smartphone },
+    { name: "Payment Processing", icon: CreditCard },
+    { name: "API Solutions", icon: Code2 },
+    { name: "Self Kiosk", icon: MonitorSmartphone },
+    { name: "Contact Us", icon: Mail },
+    { name: "Register Now", icon: UserPlus },
 ];
 
 export default function Header() {
@@ -30,8 +41,20 @@ export default function Header() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
+    
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        if (open) {
+            document.body.classList.add("overflow-hidden");
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+        };
+    }, [open]);
 
     return (
         <>
@@ -43,9 +66,9 @@ export default function Header() {
                         : "max-h-10 opacity-100 translate-y-0 py-2"
                         }`}
                 >
-                    <div className="mx-auto flex max-w-7xl items-center justify-between px-4 text-white font-semibold">
-                        <p>Welcome to PrepaidiQ</p>
-                        <p>Retail Solution for Telecom Carriers</p>
+                    <div className="mx-auto flex max-w-7xl items-center justify-center px-4 text-white font-semibold">
+                        <p className="text-center">NOW OFFERING SELF-SERVICING KIOSK! BECOME A AUTHORIZED DEALER TODAY!</p>
+                        {/* <p>Retail Solution for Telecom Carriers</p> */}
                     </div>
                 </div>
 
@@ -122,12 +145,14 @@ export default function Header() {
 
                     {/* Desktop Buttons */}
                     <div className="ml-auto hidden items-center gap-3 md:flex">
-                        <a
+                        {/* <a
                             href="/login"
                             className="text-sm font-medium text-white/75 hover:text-white"
                         >
                             Log in
-                        </a>
+                        </a> */}
+
+                        <Smartphone className="text-pink-500"/>
 
                         {/* <a
                             href="/signup"
@@ -150,11 +175,11 @@ export default function Header() {
 
             {/* sidebar */}
             <aside
-                className={`fixed left-0 top-0 z-70 h-full w-[85%] max-w-sm border-r border-white/10 bg-[#130009]/90 p-5 text-white shadow-2xl backdrop-blur-2xl transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"
+                className={`fixed left-0 top-0 z-70 h-dvh w-[85%] max-w-sm overflow-y-auto overscroll-contain border-r border-white/10 bg-[#130009]/90 p-5 text-white shadow-2xl backdrop-blur-2xl transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"
                     }`}
             >
                 <div className="flex items-center justify-between">
-                    <img src="/assets/logo.png" alt="Prepaid iQ" className="h-10" />
+                    <img src="/assets/logo.png" alt="Prepaid iQ" className="h-8" />
 
                     <button
                         onClick={() => setOpen(false)}
@@ -182,7 +207,7 @@ export default function Header() {
                     })}
                 </div>
 
-                <div className="mt-8 grid gap-3">
+                <div className="mt-8 grid gap-3 pb-8 md:hidden">
                     <a
                         href="/login"
                         className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-center text-sm font-semibold text-white"
@@ -190,12 +215,6 @@ export default function Header() {
                         Log in
                     </a>
 
-                    {/* <a
-                        href="/signup"
-                        className="rounded-full bg-pink-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-pink-600/30"
-                    >
-                        Sign up
-                    </a> */}
                     <Button text="Sign up" />
                 </div>
             </aside>

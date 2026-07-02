@@ -67,17 +67,17 @@ export default function Home() {
                 <img
                     src="/assets/arrow-ele.png"
                     alt=""
-                    className="absolute right-4 md:right-20 top-10 w-24 md:w-44 hidden lg:block"
+                    className="animate-fl absolute right-4 md:right-20 top-10 w-24 md:w-44 hidden lg:block"
                 />
 
                 {/* Dots */}
                 <img
                     src="/assets/dots.png"
                     alt=""
-                    className="absolute left-4 md:left-10 top-64 w-16 md:w-28 opacity-70"
+                    className="absolute animate-grow left-4 md:left-10 top-64 w-16 md:w-28 opacity-70"
                 />
 
-                <div className="container mx-auto px-5">
+                <div className="container mx-auto px-5" data-aos="fade-up">
 
                     {/* Small Badge */}
                     <div className="flex justify-center">
@@ -107,12 +107,12 @@ export default function Home() {
                     </div>
 
                     {/* Dashboard Image */}
-                    <div className="relative mt-16 md:mt-20">
+                    <div className="relative mt-16 md:mt-20" data-aos="fade-up">
                         <div className="rounded-[18px] md:rounded-[28px] overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,.45)]">
 
                             {/* Replace this image */}
                             <img
-                                src="/assets/dashboard.png"
+                                src="/assets/dashboard-1.png"
                                 alt="Dashboard"
                                 className="w-full h-auto object-cover"
                             />
@@ -121,11 +121,11 @@ export default function Home() {
                 </div>
             </section>
 
-            <div className="w-full overflow-hidden py-8 md:py-12">
+            <div className="w-full overflow-hidden py-8 md:py-12" data-aos="zoom-in" data-aos-delay="150">
                 <Marquee
                     speed={40}
                     gradient={false}
-                    pauseOnHover={true}
+                    pauseOnHover={false}
                     autoFill={true}
                 >
                     {topImages.map((img, index) => (
@@ -145,7 +145,7 @@ export default function Home() {
 
                 <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:px-12">
                     {/* left content */}
-                    <div className="text-center lg:text-left">
+                    <div className="text-center lg:text-left" data-aos="fade-right">
                         <h2 className="primary-heading text-white!">
                             Welcome to Prepaid iQ
                         </h2>
@@ -156,7 +156,7 @@ export default function Home() {
                     </div>
 
                     {/* right floating tags */}
-                    <div className="flex flex-col items-center gap-4 sm:gap-5">
+                    <div className="flex flex-col items-center gap-4 sm:gap-5" data-aos="fade-left">
                         {tags.map((item, index) => {
                             const Icon = item.icon;
 
@@ -186,7 +186,7 @@ export default function Home() {
                 <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="grid items-center gap-14 lg:grid-cols-2">
 
-                        <div className="text-center lg:text-left">
+                        <div className="text-center lg:text-left" data-aos="fade-right">
                             <h2 className="primary-heading text-white!">
                                 Self-KioskiQ?
                             </h2>
@@ -221,7 +221,7 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left">
+                    <div className="text-center md:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Digital Hub for brick and mortar
                         </h2>

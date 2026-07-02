@@ -36,3 +36,36 @@
 .animate-marquee-reverse {
     animation: marquee-reverse 25s linear infinite;
 }
+
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-fl {
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes grow {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+.animate-grow {
+    animation: grow 2.5s ease-in-out infinite;
+}

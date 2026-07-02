@@ -54,7 +54,7 @@ function Counter({ value, suffix }) {
 
 export default function CounterSection() {
     return (
-        <section className="relative overflow-hidden py-8 md:py-12">
+        <section className="relative overflow-hidden py-8 md:py-12" data-aos="fade-up">
 
             <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
