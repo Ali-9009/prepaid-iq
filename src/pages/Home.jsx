@@ -108,7 +108,7 @@ export default function Home() {
 
                     {/* Dashboard Image */}
                     <div className="relative mt-16 md:mt-20" data-aos="fade-up">
-                        <div className="rounded-[18px] md:rounded-[28px] overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,.45)]">
+                        <div className="rounded-[18px] md:rounded-[28px] overflow-hidden border border-white/10">
 
                             {/* Replace this image */}
                             <img

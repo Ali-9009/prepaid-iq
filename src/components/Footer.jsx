@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 
 const quickLinks = [
     { name: "MoneiQ", path: "/" },
@@ -45,19 +45,25 @@ export default function Footer() {
                     <div>
                         <h3 className="mb-5 text-lg font-semibold text-white">Contacts</h3>
 
-                        <div className="space-y-3 text-sm text-gray-400">
+                        <div className="space-y-4">
                             <a
                                 href="mailto:support@prepaidiq.com"
-                                className="block transition hover:text-(--primary-color)"
+                                className="group flex items-center gap-3 text-sm text-gray-400 transition hover:text-(--primary-color)"
                             >
-                                support@prepaidiq.com
+                                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-white/5 border border-white/10 transition group-hover:border-(--primary-color)/40 group-hover:bg-(--primary-color)/10">
+                                    <Mail size={18} />
+                                </div>
+                                <span>support@prepaidiq.com</span>
                             </a>
 
-                            <a
-                                href="tel:+17635471297"
-                                className="block transition hover:text-(--primary-color)"
+                            <a  
+                                href="tel:+17866675030"
+                                className="group flex items-center gap-3 text-sm text-gray-400 transition hover:text-(--primary-color)"
                             >
-                                (786) 667-5030
+                                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-white/5 border border-white/10 transition group-hover:border-(--primary-color)/40 group-hover:bg-(--primary-color)/10">
+                                    <Phone size={18} />
+                                </div>
+                                <span>(786) 667-5030</span>
                             </a>
                         </div>
                     </div>
@@ -100,11 +106,14 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
-                    <img
-                        src="/assets/logo.png"
-                        alt="PrepaidIQ"
-                        className="h-10 object-contain"
-                    />
+
+                    <Link to="/">
+                        <img
+                            src="/assets/logo.png"
+                            alt="PrepaidIQ"
+                            className="h-10 object-contain"
+                        />
+                    </Link>
 
                     <p className="text-center text-sm text-gray-500">
                         © 2026{" "}
