@@ -54,8 +54,7 @@ export default function Home() {
 
             <section className="relative max-w-7xl mx-auto overflow-hidden pt-20 md:pt-28">
                 {/* Background Glow */}
-                <div className="absolute left-62 top-60 h-80 w-80 rounded-full bg-pink-600/20 blur-[140px]" />
-                <div className="absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-pink-600/20 blur-[140px]" />
+                <div className="absolute left-82 top-60 h-80 w-80 rounded-full bg-pink-600/20 blur-[140px]" />
 
                 {/* Left Star */}
                 <img
