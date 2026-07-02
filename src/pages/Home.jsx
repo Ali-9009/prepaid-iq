@@ -114,7 +114,7 @@ export default function Home() {
                             <img
                                 src="/assets/dashboard-1.png"
                                 alt="Dashboard"
-                                className="w-full h-auto object-cover"
+                                className="w-full h-auto rounded-3xl object-cover"
                             />
                         </div>
                     </div>
