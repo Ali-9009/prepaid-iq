@@ -11,6 +11,8 @@ import {
     ClipboardList,
     ArrowRight,
 } from "lucide-react";
+import ScheduleModal from '../components/ScheduleModal';
+import { useState } from 'react';
 
 const steps = [
     {
@@ -40,6 +42,7 @@ const steps = [
 ];
 
 export default function Api() {
+    const [openModal, setOpenModal] = useState(false);
     return (
         <>
             <section className="max-w-7xl mx-auto px-4 py-8 md:py-12">
@@ -54,18 +57,26 @@ export default function Api() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="z-9 text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Streamline Operations with API Integration Services
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Work with PrepaidiQ for seamless API integration solutions by industries leaders. PrepaidiQ offers a full range of API services to enhance your digital infrastructure
                         </p>
 
-                        <div className="mt-7 flex justify-center md:justify-start">
-                            <Button text="Schedule a Conversation" />
+                        <div className="flex lg:justify-start justify-center">
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
+                            />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                 </div>
@@ -98,7 +109,7 @@ export default function Api() {
                                 </div>
                             </div>
 
-                          <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:items-center md:justify-center">
+                            <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:items-center md:justify-center">
                                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-(--primary-color)/15 text-(--primary-color)">
                                     <Code2 size={28} />
                                 </div>
@@ -109,7 +120,7 @@ export default function Api() {
                                     </h3>
 
                                     <p className="mt-2 leading-7 text-(--text-color)">
-                                        No upcharge for support. You need help? You got it—with fast response time
+                                        No upcharge for support. You need help? You got it—with fast response time. No upcharge for support.
                                     </p>
                                 </div>
                             </div>

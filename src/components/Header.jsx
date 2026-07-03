@@ -28,7 +28,12 @@ const navLinks = [
     { name: "API Solutions", icon: Code2, path: "/api-solutions" },
     { name: "Self Kiosk", icon: MonitorSmartphone, path: "/self-kiosk" },
     { name: "Contact Us", icon: Mail, path: "/contact-us" },
-    { name: "Register Now", icon: UserPlus, path: "/register" },
+    {
+        name: "Register Now",
+        icon: UserPlus,
+        path: "https://dealers.prepaidiq.com/register/4Q==",
+        external: true,
+    },
 ];
 
 export default function Header() {
@@ -163,7 +168,13 @@ export default function Header() {
                             Sign up
                         </a> */}
 
-                        <Button text="Sign up" />
+                        <a
+                            href="https://dealers.prepaidiq.com/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button text="Log in" />
+                        </a>
                     </div>
                 </div>
             </header>
@@ -195,6 +206,22 @@ export default function Header() {
                     {navLinks.map((link) => {
                         const Icon = link.icon;
 
+                        if (link.external) {
+                            return (
+                                <a
+                                    key={link.name}
+                                    href={link.path}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setOpen(false)}
+                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
+                                >
+                                    <Icon size={19} className="text-pink-400" />
+                                    {link.name}
+                                </a>
+                            );
+                        }
+
                         return (
                             <Link
                                 key={link.name}
@@ -211,13 +238,14 @@ export default function Header() {
 
                 <div className="mt-8 grid gap-3 pb-8 md:hidden">
                     <a
-                        href="/login"
+                        href="https://dealers.prepaidiq.com/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-center text-sm font-semibold text-white"
                     >
                         Log in
                     </a>
 
-                    <Button text="Sign up" />
                 </div>
             </aside>
         </>

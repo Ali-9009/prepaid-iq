@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Button from "../components/PrimaryBtn";
+import ScheduleModal from "../components/ScheduleModal";
 
 export default function SelfKiosk() {
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -22,13 +25,21 @@ export default function SelfKiosk() {
               Service-Kiosk?
             </h2>
 
-            <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+            <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
               Self-kiosk ordering enables patrons to independently place their orders via a kiosk terminal, bypassing the need for assistance from a store attendant. This streamlines operations for businesses, allowing staff to allocate their time to other duties like attending to customers and enhancing the overall in-store experience.
             </p>
 
-            <div className="mt-7 flex justify-center lg:justify-start">
-              <Button text="Schedule a Conversation" />
+            <div className="flex lg:justify-start justify-center">
+              <Button
+                text="Schedule a Conversation"
+                onClick={() => setOpenModal(true)}
+              />
             </div>
+
+            <ScheduleModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
+            />
           </div>
 
         </div>
@@ -111,13 +122,21 @@ export default function SelfKiosk() {
               With a large 21.5-inch IPS screen, the SK700 provides brilliant viewing experience and makes your brand stand out. This device integrates seamlessly with the needs of your business with an all-day battery life.
             </p>
 
-            <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+            <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
               Unlike the other products in the series, it doesn't have a payment module. It is designed to be paired with PAX IM30 to offer the same seamless payment experience.
             </p>
 
-            <div className="mt-7 flex justify-center lg:justify-start">
-              <Button text="Schedule a Conversation" />
+            <div className="flex lg:justify-start justify-center">
+              <Button
+                text="Schedule a Conversation"
+                onClick={() => setOpenModal(true)}
+              />
             </div>
+
+            <ScheduleModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
+            />
           </div>
 
           <div className="flex justify-center lg:justify-end">

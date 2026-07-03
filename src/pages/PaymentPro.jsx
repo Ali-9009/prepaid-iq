@@ -9,6 +9,8 @@ import {
     Headset,
 } from "lucide-react";
 import Button from '../components/PrimaryBtn'
+import ScheduleModal from "../components/ScheduleModal";
+import { useState } from "react";
 
 const features = [
     {
@@ -62,6 +64,7 @@ const features1 = [
 ];
 
 export default function PaymentPro() {
+    const [openModal, setOpenModal] = useState(false);
     return (
         <>
             <section className="max-w-7xl mx-auto px-4 py-8 md:py-12">
@@ -76,18 +79,26 @@ export default function PaymentPro() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Fast, Secure, Integrated Transactions
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             PrepaidiQ Merchant Services (MSP) is full-service payment processing that enables an integrated experience with automated reconciliation, transparent reporting, and faster checkouts for customers. Our payments experts are there for you when you need superior onboarding, customer service, and support.
                         </p>
 
-                        <div className="mt-7 flex justify-center md:justify-start">
-                            <Button text="Schedule a Conversation" />
+                        <div className="flex lg:justify-start justify-center">
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
+                            />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                 </div>

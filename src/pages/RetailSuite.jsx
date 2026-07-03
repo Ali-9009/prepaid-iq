@@ -1,5 +1,7 @@
 import { UsersRound, Workflow, TabletSmartphone } from "lucide-react";
 import Button from '../components/PrimaryBtn'
+import ScheduleModal from "../components/ScheduleModal";
+import { useState } from "react";
 
 const items = [
     {
@@ -20,6 +22,7 @@ const items = [
 ];
 
 export default function RetailSuite() {
+    const [openModal, setOpenModal] = useState(false);
     return (
         <>
             <section className="max-w-7xl mx-auto px-4 py-8 md:py-12">
@@ -34,18 +37,26 @@ export default function RetailSuite() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="z-9 text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Streamline operations for your direct retail stores
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Free your staff from the register with our POS system, enabling more personal & engaging sales. This environment enables faster transaction processing for multi-carrier Activation & refills.
                         </p>
 
-                        <div className="mt-7 flex justify-center md:justify-start">
-                            <Button text="Schedule a Conversation" />
+                        <div className="flex lg:justify-start justify-center">
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
+                            />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                 </div>
@@ -87,21 +98,29 @@ export default function RetailSuite() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--primary-color)_0%,transparent_35%)] opacity-25" />
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             The Flexible Kiosk Solution
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             With a large 21.5-inch IPS screen, the SK700 provides brilliant viewing experience and makes your brand stand out. This device integrates seamlessly with the needs of your business with an all-day battery life.
                         </p>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Unlike the other products in the series, it doesn't have a payment module. It is designed to be paired with PAX IM30 to offer the same seamless payment experience.
                         </p>
-                        <div className="mt-7 flex justify-center md:justify-start">
-                            <Button text="Schedule a Conversation" />
+                        <div className="flex lg:justify-start justify-center">
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
+                            />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                     <div className="flex justify-center lg:justify-end">

@@ -129,15 +129,15 @@ export default function ScheduleModal({ open, onClose }) {
     return createPortal(
         <div
             onClick={onClose}
-            className="fixed inset-0 z-[99999] flex min-h-dvh items-center justify-center bg-black/75 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-99 flex min-h-dvh items-center justify-center bg-black/25 p-4 backdrop-blur-md"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-xl overflow-hidden rounded-[32px] border border-(--primary-color)/30 bg-[#17030d] shadow-[0_0_70px_rgba(219,0,107,0.25)]"
+                className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-(--primary-color)/30 bg-[#17030d] shadow-[0_0_70px_rgba(219,0,107,0.25)]"
             >
                 <button
                     onClick={onClose}
-                    className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-(--primary-color)"
+                    className="absolute right-6 top-6 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-(--primary-color)"
                 >
                     <X size={22} />
                 </button>

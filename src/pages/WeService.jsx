@@ -1,7 +1,10 @@
 import { Plane, ShoppingCart, ArrowUpRight, Sparkles } from "lucide-react";
 import Button from "../components/PrimaryBtn";
+import ScheduleModal from "../components/ScheduleModal";
+import { useState } from "react";
 
 export default function WeService() {
+    const [openModal, setOpenModal] = useState(false);
     return (
         <>
             <section className="max-w-7xl mx-auto px-4 py-8 md:py-12">
@@ -16,18 +19,26 @@ export default function WeService() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="z-9 text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Who We Service
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             At PrepaidiQ, we are a cutting-edge Technology Service Provider (TSP) dedicated to delivering comprehensive digital solutions. Our expertise lies in seamlessly integrating with various carriers to enhance your business operations. We specialize in eliminating front-end errors in carrier activation, refills, international top-ups, and more, ensuring your services run smoothly and efficiently.
                         </p>
 
-                        <div className="mt-7 flex justify-center md:justify-start">
-                            <Button text="Schedule a Conversation" />
+                        <div className="flex lg:justify-start justify-center">
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
+                            />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                 </div>
@@ -37,12 +48,12 @@ export default function WeService() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--primary-color)_0%,transparent_35%)] opacity-25" />
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Wireless Stores
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Maximize the efficiency of your operations with our streamlined solutions for activations and refills. Our reliable technology helps you manage inventory better and serve customers faster, leading to increased customer satisfaction and repeat business.
                         </p>
 
@@ -50,7 +61,7 @@ export default function WeService() {
                             Convenience Stores
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Turn your convenience store into a digital hub. Offer customers a wide range of digital services including mobile refills, international top-ups, and more. With PrepaidiQ, increase foot traffic and average spend per visit effortlessly.
                         </p>
 
@@ -162,12 +173,12 @@ export default function WeService() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Travel Connections
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             From booking agencies to transport services, our solutions help you provide added value to your customers. Offer seamless digital products that cater to the needs of travelers, adding a profitable layer to your business model.
                         </p>
 
@@ -175,7 +186,7 @@ export default function WeService() {
                             Payment Processors
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Collaborate with us to facilitate smoother transactions. Our technology ensures that digital product sales are processed efficiently, reducing errors and enhancing user satisfaction.
                         </p>
 

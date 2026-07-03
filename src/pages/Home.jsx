@@ -206,9 +206,17 @@ export default function Home() {
                             <p className="m-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base lg:mx-0 mx-auto">
                                 Self-kiosk ordering enables customers to independently activate, topup, refill via a kiosk terminal, bypassing the need for assistance from a store attendant. This streamlines operations for businesses, allowing staff to allocate their time to other duties like attending to customers and enhancing the overall in-store experience.
                             </p>
-                            <div className="mt-7 flex justify-center lg:justify-start">
-                                <Button text="Schedule a Conversation" />
+                            <div className="flex lg:justify-start justify-center">
+                                <Button
+                                    text="Schedule a Conversation"
+                                    onClick={() => setOpenModal(true)}
+                                />
                             </div>
+
+                            <ScheduleModal
+                                open={openModal}
+                                onClose={() => setOpenModal(false)}
+                            />
                         </div>
 
                         <div className=" flex justify-center">
@@ -240,18 +248,24 @@ export default function Home() {
                             Digital Hub for brick and mortar
                         </h2>
 
-                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto my-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Turn your brick and mortar location into a digital hub. Offer customers a
                             wide range of digital services, such as Telecom Carrier Activations, mobile
                             refills, international top-ups, and more. With PrepaidiQ, increase foot
                             traffic and improve the customer experience effortlessly.
                         </p>
 
-                        <div className="mt-7 flex justify-center lg:justify-start">
-                            <SchedulePopup
-                                trigger={<Button text="Schedule a Conversation" />}
+                        <div className="flex lg:justify-start justify-center">
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
                             />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                 </div>
