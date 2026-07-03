@@ -9,6 +9,9 @@ import {
     CreditCard,
 } from "lucide-react";
 import Counter from "../components/Counter";
+import ScheduleModal from "../components/ScheduleModal";
+import { useState } from "react";
+import SchedulePopup from "../components/SchedulePopup";
 
 const topImages = [
     // "/assets/carrier-1.png",
@@ -48,6 +51,7 @@ const tags = [
 
 
 export default function Home() {
+    const [openModal, setOpenModal] = useState(false);
     const Marquee = MarqueeModule.default || MarqueeModule;
     return (
         <>
@@ -81,7 +85,7 @@ export default function Home() {
 
                     {/* Small Badge */}
                     <div className="flex justify-center">
-                        <span className="border border-pink-500 text-pink-500 rounded-full px-5 py-2 text-xs font-semibold bg-pink-700/30  uppercase tracking-widest">
+                        <span className="border border-(--primary-color)/30 text-(--primary-color) rounded-full px-5 py-2 text-xs font-semibold bg-pink-700/30  uppercase tracking-widest">
                             Transaction Service Provider
                         </span>
                     </div>
@@ -102,8 +106,16 @@ export default function Home() {
                         </p>
 
                         <div className="flex justify-center">
-                            <Button text="Schedule a Conversation" />
+                            <Button
+                                text="Schedule a Conversation"
+                                onClick={() => setOpenModal(true)}
+                            />
                         </div>
+
+                        <ScheduleModal
+                            open={openModal}
+                            onClose={() => setOpenModal(false)}
+                        />
                     </div>
 
                     {/* Dashboard Image */}
@@ -194,7 +206,9 @@ export default function Home() {
                             <p className="m-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base lg:mx-0 mx-auto">
                                 Self-kiosk ordering enables customers to independently activate, topup, refill via a kiosk terminal, bypassing the need for assistance from a store attendant. This streamlines operations for businesses, allowing staff to allocate their time to other duties like attending to customers and enhancing the overall in-store experience.
                             </p>
-                            <Button text="Schedule a Conversation" />
+                            <div className="mt-7 flex justify-center lg:justify-start">
+                                <Button text="Schedule a Conversation" />
+                            </div>
                         </div>
 
                         <div className=" flex justify-center">
@@ -221,20 +235,22 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="text-center md:text-left" data-aos="fade-left">
+                    <div className="text-center lg:text-left" data-aos="fade-left">
                         <h2 className="primary-heading text-white!">
                             Digital Hub for brick and mortar
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
+                        <p className="mx-auto mt-5 text-sm leading-7 text-(--text-color) sm:text-base md:mx-0">
                             Turn your brick and mortar location into a digital hub. Offer customers a
                             wide range of digital services, such as Telecom Carrier Activations, mobile
                             refills, international top-ups, and more. With PrepaidiQ, increase foot
                             traffic and improve the customer experience effortlessly.
                         </p>
 
-                        <div className="mt-7 flex justify-center md:justify-start">
-                            <Button text="Schedule a Conversation" />
+                        <div className="mt-7 flex justify-center lg:justify-start">
+                            <SchedulePopup
+                                trigger={<Button text="Schedule a Conversation" />}
+                            />
                         </div>
                     </div>
 

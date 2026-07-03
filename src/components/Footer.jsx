@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
 const quickLinks = [
-    { name: "MoneiQ", path: "/" },
-    { name: "Inventory", path: "/who-we-service" },
-    { name: "Software Development", path: "/retail-suite" },
+    { name: "MoneiQ", path: "/moneyiq" },
+    { name: "Inventory", path: "/inventory" },
+    { name: "Software Development", path: "/software-development" },
 ];
 
 const policies = [
-    { name: "DMCA", path: "/privacy-policy" },
+    { name: "DMCA", path: "/dmca" },
     { name: "Privacy Policy", path: "/privacy-policy" },
-    { name: "Terms of Services", path: "/refund-policy" },
-    { name: "Cancellation & Refund Policy", path: "/cookies" },
+    { name: "Terms of Services", path: "/term-of-services" },
+    { name: "Cancellation & Refund Policy", path: "/cancellation-refund-policy" },
 ];
 
 const socials = [

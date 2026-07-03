@@ -14,6 +14,23 @@ import Layout from "./Layout";
 
 // Pages
 import Home from "./pages/Home";
+import WeService from "./pages/WeService";
+import RetailSuite from "./pages/RetailSuite";
+import PaymentPro from "./pages/PaymentPro";
+import Api from "./pages/Api";
+import SelfKiosk from "./pages/SelfKiosk";
+import Contact from "./pages/Contact";
+
+// footer
+import MoneiQ from "./pages/MoneiQ";
+import Inventory from "./pages/Inventory";
+import SoftwareDev from "./pages/SoftwareDev";
+
+// policies
+import DMCA from "./pages/policies/DMCA";
+import PrivacyPolicy from "./pages/policies/PrivacyPolicy";
+import TermServices from "./pages/policies/TermServices";
+import Cancellation from "./pages/policies/Cancellation";
 
 
 
@@ -28,7 +45,7 @@ function App() {
     });
   }, []);
   
-  const location = useLocation
+  const location = useLocation();
 
   return (
     <>
@@ -42,6 +59,21 @@ function App() {
 
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
+              <Route path="/moneyiq" element={<MoneiQ />} />
+              <Route path="/inventory" element={<Inventory />} />
+              <Route path="/software-development" element={<SoftwareDev />} />
+              <Route path="/who-we-serve" element={<WeService />} />
+              <Route path="/retail-suite" element={<RetailSuite />} />
+              <Route path="/payment-processing" element={<PaymentPro />} />
+              <Route path="/api-solutions" element={<Api />} />
+              <Route path="/self-kiosk" element={<SelfKiosk />} />
+              <Route path="/contact-us" element={<Contact />} />
+
+              {/* policies */}
+              <Route path="/dmca" element={<DMCA />} />
+              <Route path="/Privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/term-of-services" element={<TermServices />} />
+              <Route path="/cancellation-refund-policy" element={<Cancellation />} />
 
             </Route>
           </Routes>

@@ -18,15 +18,17 @@ import {
 } from "lucide-react";
 import Button from "./PrimaryBtn";
 
+import { Link } from "react-router-dom";
+
 const navLinks = [
-    { name: "Home", icon: Home },
-    { name: "Who We Service", icon: Users },
-    { name: "Retail Suite", icon: Smartphone },
-    { name: "Payment Processing", icon: CreditCard },
-    { name: "API Solutions", icon: Code2 },
-    { name: "Self Kiosk", icon: MonitorSmartphone },
-    { name: "Contact Us", icon: Mail },
-    { name: "Register Now", icon: UserPlus },
+    { name: "Home", icon: Home, path: "/" },
+    { name: "Who We Service", icon: Users, path: "/who-we-serve" },
+    { name: "Retail Suite", icon: Smartphone, path: "/retail-suite" },
+    { name: "Payment Processing", icon: CreditCard, path: "/payment-processing" },
+    { name: "API Solutions", icon: Code2, path: "/api-solutions" },
+    { name: "Self Kiosk", icon: MonitorSmartphone, path: "/self-kiosk" },
+    { name: "Contact Us", icon: Mail, path: "/contact-us" },
+    { name: "Register Now", icon: UserPlus, path: "/register" },
 ];
 
 export default function Header() {
@@ -106,11 +108,11 @@ export default function Header() {
                     </div>
 
                     {/* Logo */}
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
                         className={`absolute left-1/2 -translate-x-1/2 transition-all duration-300 md:static md:translate-x-0 ${showMobileSearch
-                            ? "opacity-0 scale-90 pointer-events-none"
-                            : "opacity-100 scale-100"
+                                ? "pointer-events-none scale-90 opacity-0"
+                                : "scale-100 opacity-100"
                             }`}
                     >
                         <img
@@ -118,7 +120,7 @@ export default function Header() {
                             alt="PrepaidiQ"
                             className="h-9 w-auto"
                         />
-                    </a>
+                    </Link>
 
                     {/* Desktop Search */}
                     <div className="relative hidden flex-1 md:block">
@@ -194,15 +196,15 @@ export default function Header() {
                         const Icon = link.icon;
 
                         return (
-                            <a
+                            <Link
                                 key={link.name}
-                                href="#"
+                                to={link.path}
                                 onClick={() => setOpen(false)}
                                 className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
                             >
                                 <Icon size={19} className="text-pink-400" />
                                 {link.name}
-                            </a>
+                            </Link>
                         );
                     })}
                 </div>
